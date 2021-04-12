@@ -1,6 +1,10 @@
-name: PHPUnit
+name: Build Status
 
 on:
+  push:
+    branches:
+      - master
+
   pull_request:
     branches:
       - master
