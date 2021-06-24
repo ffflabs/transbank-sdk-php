@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.3.1@2feba22a005a18bf31d4c7b9bdb9252c73897476">
+  <file src="src/Onepay/ShoppingCart.php">
+    <ParadoxicalCondition occurrences="1">
+      <code>empty($cart['items'])</code>
+    </ParadoxicalCondition>
+  </file>
+  <file src="src/Patpass/PatpassComercio/Exceptions/InscriptionStartException.php">
+    <InvalidClass occurrences="1">
+      <code>PatpassException</code>
+    </InvalidClass>
+  </file>
+</files>
