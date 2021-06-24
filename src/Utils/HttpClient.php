@@ -5,6 +5,7 @@ namespace Transbank\Utils;
 use Composer\InstalledVersions;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\ResponseInterface;
 use Transbank\Contracts\HttpClientInterface;
 
 class HttpClient implements HttpClientInterface
@@ -30,7 +31,7 @@ class HttpClient implements HttpClientInterface
 
         $baseHeaders = [
             'Content-Type' => 'application/json',
-            'User-Agent'   => 'SDK-PHP/'.$installedVersion,
+            'User-Agent'   => 'SDK-PHP/' . $installedVersion,
         ];
 
         $givenHeaders = isset($options['headers']) ? $options['headers'] : [];
@@ -59,7 +60,7 @@ class HttpClient implements HttpClientInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    protected function sendGuzzle5Request($method, $url, array $headers, $payload)
+    protected function sendGuzzle5Request($method, $url, array $headers, $payload): ResponseInterface
     {
         $client = new Client();
 
@@ -79,7 +80,7 @@ class HttpClient implements HttpClientInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    protected function sendGuzzleRequest($method, $url, array $headers, $payload)
+    protected function sendGuzzleRequest($method, $url, array $headers, $payload): ResponseInterface
     {
         $request = new Request($method, $url, $headers, $payload);
 

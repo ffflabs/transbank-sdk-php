@@ -32,19 +32,19 @@ class Options
      */
     public $integrationType = self::ENVIRONMENT_INTEGRATION;
 
-    public function __construct($apiKey, $commerceCode, $integrationType = self::ENVIRONMENT_INTEGRATION)
+    public function __construct(string $apiKey, $commerceCode, $integrationType = self::ENVIRONMENT_INTEGRATION)
     {
         $this->setApiKey($apiKey);
         $this->setCommerceCode($commerceCode);
         $this->setIntegrationType($integrationType);
     }
 
-    public static function forProduction($commerceCode, $apiKey)
+    public static function forProduction($commerceCode, string $apiKey)
     {
         return new static($apiKey, $commerceCode, static::ENVIRONMENT_PRODUCTION);
     }
 
-    public static function forIntegration($commerceCode, $apiKey = Options::DEFAULT_API_KEY)
+    public static function forIntegration($commerceCode, string  $apiKey = Options::DEFAULT_API_KEY)
     {
         return new static($apiKey, $commerceCode, static::ENVIRONMENT_INTEGRATION);
     }

@@ -4,5 +4,5 @@ namespace Transbank\Contracts;
 
 interface HttpClientInterface
 {
-    public function request($method, $url, $payload = [], $options = null);
+    public function request(string $method, string  $url, $payload = [], $options = null);
 }
